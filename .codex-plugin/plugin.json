@@ -1,0 +1,26 @@
+{
+  "name": "obsidian-vault",
+  "version": "0.3.0",
+  "description": "Safely search, read, create, and update Obsidian Markdown notes while reconciling them with relevant conversation context and memory.",
+  "author": {
+    "name": "Vsevolod Belyaev"
+  },
+  "interface": {
+    "displayName": "Obsidian",
+    "shortDescription": "Combine verified Obsidian notes with relevant memory.",
+    "longDescription": "Searches Obsidian before answering questions that may depend on saved notes, then reconciles verified notes with relevant conversation or saved memory. Obsidian facts stay clearly sourced; useful memory-only facts are included as unverified. Writes are guarded against concurrent changes.",
+    "developerName": "Vsevolod Belyaev",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Check Obsidian and available memory, then tell me my current tasks and separate verified facts from unverified additions.",
+      "Reconcile the relevant Obsidian notes with remembered context and name the source notes.",
+      "Update the corresponding note in Obsidian.",
+      "Save this as a new note in Obsidian."
+    ]
+  },
+  "mcpServers": "./.mcp.json"
+}

@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "obsidian-vault": {
+      "command": "./scripts/launch-stdio",
+      "cwd": ".",
+      "env_vars": [
+        "OBSIDIAN_VAULT_ROOT",
+        "PATH"
+      ],
+      "startup_timeout_sec": 10,
+      "tool_timeout_sec": 30
+    }
+  }
+}

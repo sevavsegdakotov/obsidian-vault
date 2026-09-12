@@ -1,0 +1,19 @@
+{
+  "name": "obsidian-vault-mcp",
+  "version": "0.3.0",
+  "type": "module",
+  "description": "A safe local and VPS-ready MCP connector for Obsidian, ChatGPT, and Codex.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sevavsegdakotov/obsidian-vault.git"
+  },
+  "scripts": {
+    "start:http": "node server-http.mjs",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^4.4.3"
+  }
+}

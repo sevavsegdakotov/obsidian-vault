@@ -1,0 +1,22 @@
+services:
+  obsidian-mcp:
+    build: .
+    container_name: obsidian-mcp
+    restart: unless-stopped
+    environment:
+      HOST: 0.0.0.0
+      PORT: 3777
+      ALLOWED_HOSTS: 127.0.0.1,localhost,obsidian-mcp
+      OBSIDIAN_BACKEND: filesystem
+      OBSIDIAN_VAULT_ROOT: /vault
+      OBSIDIAN_NEW_NOTE_FOLDER: ${OBSIDIAN_NEW_NOTE_FOLDER:-Inbox}
+      OBSIDIAN_TIME_ZONE: ${OBSIDIAN_TIME_ZONE:-UTC}
+    ports:
+      - "127.0.0.1:3777:3777"
+    volumes:
+      - ${OBSIDIAN_VAULT_PATH:?Set OBSIDIAN_VAULT_PATH in .env}:/vault
+    read_only: true
+    tmpfs:
+      - /tmp:size=32m,mode=1777
+    security_opt:
+      - no-new-privileges:true

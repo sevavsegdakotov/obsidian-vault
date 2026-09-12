@@ -1,0 +1,25 @@
+[Unit]
+Description=OpenAI Secure MCP Tunnel for Obsidian
+Documentation=https://developers.openai.com/api/docs/guides/secure-mcp-tunnels
+Wants=network-online.target
+After=network-online.target docker.service
+
+[Service]
+Type=simple
+User=obsidian-mcp
+Group=obsidian-mcp
+WorkingDirectory=/opt/obsidian-vault
+Environment=HOME=/var/lib/obsidian-mcp
+EnvironmentFile=/etc/obsidian-mcp/tunnel.env
+ExecStartPre=/usr/bin/curl -fsS http://127.0.0.1:3777/healthz
+ExecStart=/usr/local/bin/tunnel-client run --profile obsidian-vault
+Restart=always
+RestartSec=5
+TimeoutStopSec=20
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=read-only
+
+[Install]
+WantedBy=multi-user.target
