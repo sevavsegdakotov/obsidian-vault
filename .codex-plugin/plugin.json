@@ -1,6 +1,6 @@
 {
   "name": "obsidian-vault",
-  "version": "0.3.0",
+  "version": "0.3.0+codex.20260912094958",
   "description": "Safely search, read, create, and update Obsidian Markdown notes while reconciling them with relevant conversation context and memory.",
   "author": {
     "name": "Vsevolod Belyaev"
